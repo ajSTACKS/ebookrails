@@ -1,0 +1,10 @@
+<div class="col-3">
+  <div class=" thumbnail">
+    <%= image_tag 'gatsby.jpg', class: 'img-fluid '%>
+  </div>
+  <div class="caption">
+  <p>
+    <strong><%= link_to book.name, book_path(book) %></strong></p>
+<p ><%= book.price/100 %></p>
+  </div>
+</div>
