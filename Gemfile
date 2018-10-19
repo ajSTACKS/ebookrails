@@ -60,3 +60,4 @@ gem 'devise', '~> 4.5'
 gem 'cancan', '~> 1.6', '>= 1.6.10'
 gem "paperclip", "~> 6.0.0"
 gem 'dotenv-rails', groups: [:development]
+gem 'aws-sdk', '~> 3'
