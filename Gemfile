@@ -57,3 +57,6 @@ gem 'jquery-rails'
 gem 'popper_js', '~> 1.14.3'
 gem 'simple_form', '~> 4.0', '>= 4.0.1'
 gem 'devise', '~> 4.5'
+gem 'cancan', '~> 1.6', '>= 1.6.10'
+gem "paperclip", "~> 6.0.0"
+gem 'dotenv-rails', groups: [:development]
