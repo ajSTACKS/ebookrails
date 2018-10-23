@@ -1,5 +1,10 @@
 class Book < ApplicationRecord
+	extend FriendlyId
+  	friendly_id :name, use: :slugged
+	
+
 	belongs_to :user
+	has_many :sale
 	has_attached_file :image
 	has_attached_file :resource 
 	#each book will have two file attachments which is image and resource
