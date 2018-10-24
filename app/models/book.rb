@@ -16,4 +16,8 @@ class Book < ApplicationRecord
 	validates_attachment  :resource,presence: true, 
 	content_type: { content_type: "application/pdf" },
 	message: 'only pdf allowed'
+
+
+	validates_numericality_of :price,
+	greater_than: 49, message: "Price must be greater than 50"
 end

@@ -63,3 +63,4 @@ gem 'dotenv-rails', groups: [:development]
 gem 'aws-sdk', '~> 3'
 gem 'friendly_id', '~> 5.2.0'
 gem 'stripe', '~> 3.28'
+gem 'aasm' 

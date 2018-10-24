@@ -3,9 +3,45 @@ class Sale < ApplicationRecord
 	before_create :populate_uuid 
 	# before it creates a sale it will generate an id to that sale 
 
-	
-	validates_numericality of :price
-	greater_than: 49, message: "Price must be greater than 50"
+	include AASM
+
+	aasm column: 'state' do 
+		state :pending, :initial => true
+		state :processing
+		state :finished
+		state :failure
+
+		event :process, after: :charge_card do
+			transitions from:   :pending, to: :processing
+    	end
+
+    	event :finish do
+    		transitions from:   :processing, to: :finished
+    	end
+
+    	event :fail do
+    		transitions from:  :finished, to: :failure
+    	end
+	end
+
+	def charge_card
+		begin
+			save!
+			charge = Stripe::Charge.create(
+				amount:      self.amount,
+				currency:      "usd",
+		 	    card:        self.stripe_token,
+		 	    description:  "Book Sale",
+			     
+				)
+
+			self.update(stripe_id: charge.id)
+			self.finish!
+		rescue Stripe::StripeError => e
+			self.update_atrributes(error: e.message)
+			self.fail!
+		end
+	end
 
 	private
 
