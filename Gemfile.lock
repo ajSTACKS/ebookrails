@@ -912,7 +912,7 @@ DEPENDENCIES
   simple_form (~> 4.0, >= 4.0.1)
   spring
   spring-watcher-listen (~> 2.0.0)
-  sqlite3
+  sqlite3 (~> 1.3, >= 1.3.13)
   stripe (~> 3.28)
   turbolinks (~> 5)
   tzinfo-data
