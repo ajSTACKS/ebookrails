@@ -40,6 +40,8 @@ group :development do
   gem 'guard', '~> 2.14'
   gem 'guard-livereload', '~> 2.5'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  # Use sqlite3 as the database for Active Record
+  gem 'sqlite3'
 end
 
 group :test do
@@ -49,7 +51,10 @@ group :test do
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
 end
-
+group :production do
+  gem 'rails_12factor', '~> 0.0.3'
+  gem 'pg', '~> 1.1', '>= 1.1.3'
+end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bootstrap', '~> 4.1.3'
@@ -62,5 +67,6 @@ gem "paperclip", "~> 6.0.0"
 gem 'dotenv-rails', groups: [:development]
 gem 'aws-sdk', '~> 3'
 gem 'friendly_id', '~> 5.2.0'
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.4'
 gem 'stripe', '~> 3.28'
 gem 'aasm' 

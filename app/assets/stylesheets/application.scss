@@ -1,8 +1,94 @@
 @import "bootstrap";
 @import "devise";
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Sanchez');
+@import url('https://fonts.googleapis.com/css?family=Fascinate+Inline');
+@import "font-awesome";
 
-
+.display-4{
+	font-family: 'Fascinate Inline', cursive;
+}
+.dashboard-h1{
+	padding-bottom: 15px;
+}
 .navbar-nav > li{
   margin-left:10px;
   margin-right:10px;
+}
+.stripe-button{
+	justify-content: center;
+    flex: 3;
+}
+.navbar-item{
+	justify-content: center;
+    flex: 3;
+	ul { 
+  margin: 15px auto 0; 
+  padding: 0; 
+  list-style: none; 
+  display: table;
+  width: 600px;
+  text-align: center;
+}
+li { 
+  display: table-cell; 
+  position: relative; 
+  padding: 15px 0;
+}
+a {
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.15em;
+  font-size: 12px;
+  display: inline-block;
+  padding: 15px 20px;
+  position: relative;
+}
+a:after {    
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #fff;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+a:hover:after { 
+  width: 100%; 
+  left: 0; 
+}
+@media screen and (max-height: 300px) {
+	ul {
+		margin-top: 40px;
+	}
+}
+}
+
+a{
+	font-family: 'Sanchez', serif;
+	font-size: 1rem;
+	text-decoration: none;
+	color: black;
+
+
+}
+h1, h2, h3, p {
+	font-family: 'Open Sans', sans-serif;
+}
+
+
+
+.caption{
+	p{
+		font-size: 1rem;
+		font-style: italic;
+	}
+	.p-money{
+		font-size: 1.2rem;
+		text-align: center;
+		font-style: normal;
+	}
 }
