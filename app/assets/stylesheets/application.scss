@@ -7,11 +7,23 @@
 .display-4{
 	font-family: 'Fascinate Inline', cursive;
 }
+.fluid-1{
+      height: 330px;
+    vertical-align: middle;
+    width: 330px;
+    border-style: none;
+}
 .img-fluid{
       height: 380px;
     vertical-align: middle;
-    width: 350px;
+    width: 330px;
+    .fluid-1{
+      height: 330px;
+    vertical-align: middle;
+    width: 330px;
 }
+}
+
 .dashboard-h1{
 	padding-bottom: 15px;
 }
