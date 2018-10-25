@@ -13,7 +13,8 @@
 		<h3 class="text-center">Book Price: $<%= @book.price/100 %></h3>
 <% if current_user %>
 	<%= form_tag buy_path(slug: @book.slug) do %>
-		<script src="https://checkout.stripe.com/checkout.js" class="stripe-button">
+		<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+		Stripe.setPublishableKey('STRIPE_PUBLISHABLE_KEY');
 		data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
 		data-description="<%= @book.name %>"
 		data-name="ebook"
